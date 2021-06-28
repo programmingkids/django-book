@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title%}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4 p-2 bg-primary text-white">{{ title }}</h2>
+    
+    {% include 'flash.html' %}
+    
+    <div class="list-group">
+        <a href="{% url 'book:category_list' %}" 
+            class="list-group-item list-group-item-action">カテゴリ一覧</a>
+        <a href="{% url 'book:category_create' %}" 
+            class="list-group-item list-group-item-action">カテゴリ新規作成</a>
+        <a href="{% url 'book:author_list' %}" 
+            class="list-group-item list-group-item-action">著者一覧</a>
+        <a href="{% url 'book:author_create' %}" 
+            class="list-group-item list-group-item-action">著者新規作成</a>
+        <a href="{% url 'book:book_list' %}" 
+            class="list-group-item list-group-item-action">本一覧</a>
+        <a href="{% url 'book:book_create' %}" 
+            class="list-group-item list-group-item-action">本新規作成</a>
+    </div>
+</div>
+{% endblock %}
